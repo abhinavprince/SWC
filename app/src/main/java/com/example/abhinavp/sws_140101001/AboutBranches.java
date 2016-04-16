@@ -1,5 +1,6 @@
 package com.example.abhinavp.sws_140101001;
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -15,7 +16,7 @@ public class AboutBranches extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.about_branches);
-        Button buttons[] = null;
+        Button buttons[] = new Button[10];
         buttons[0] = (Button) findViewById(R.id.ce_btn);
         buttons[1] = (Button) findViewById(R.id.cse_btn);
         buttons[2] = (Button) findViewById(R.id.cst_btn);
@@ -27,11 +28,15 @@ public class AboutBranches extends Activity{
         buttons[8] = (Button) findViewById(R.id.me_btn);
         buttons[9] = (Button) findViewById(R.id.hss_btn);
 
+
         buttons[0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(AboutBranches.this,chemical.class);
+                Intent i = new Intent(getApplicationContext(), chemical.class);
                 startActivity(i);
+                Dialog d = new Dialog(AboutBranches.this);
+                d.setContentView(R.layout.common_content);
+                d.show();
             }
         });
         buttons[1].setOnClickListener(new View.OnClickListener() {
@@ -97,5 +102,6 @@ public class AboutBranches extends Activity{
                 startActivity(i);
             }
         });
+
     }
 }

@@ -24,6 +24,7 @@
         <activity android:name=".phy"/>
         <activity android:name=".maths"/>
         <activity android:name=".me"/>
+        <activity android:name=".SignUpPage"/>
 
         <activity
             android:name=".MainActivity"

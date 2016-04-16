@@ -22,7 +22,8 @@
             android:layout_marginBottom="30dp"
             android:layout_marginTop="10dp"
             android:textSize="15dp"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:textStyle="italic" />
 
         <EditText
             android:layout_width="match_parent"
@@ -30,7 +31,8 @@
             android:inputType="textEmailAddress"
             android:text="Username"
             android:ems="20"
-            android:id="@+id/username_edit_text" />
+            android:id="@+id/username_edit_text"
+            android:textStyle="italic" />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -38,7 +40,8 @@
             android:layout_marginTop="10dp"
             android:text="Password"
             android:ems="20"
-            android:id="@+id/password_edit_text" />
+            android:id="@+id/password_edit_text"
+            android:textStyle="italic" />
 
         <WebView
             android:layout_width="1dp"
@@ -51,11 +54,23 @@
             android:layout_height="wrap_content"
             android:id="@+id/login_button"
             android:layout_marginTop="30dp"
-            android:background="#4285F4"
+            android:background="@drawable/custom_button"
             android:text="LOGIN"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:textStyle="italic" />
 
-            <TextView android:text="Create an account"
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/create_btn"
+            android:layout_marginTop="20dp"
+            android:textColor="#4285F4"
+            android:text="Create an account"
+            style="?android:attr/borderlessButtonStyle"
+            android:textStyle="italic" />
+
+ <!--           <TextView android:text="Create an account"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
@@ -64,7 +79,7 @@
                 android:textColor="#4285F4"
                 android:layout_gravity="center_horizontal"
                 android:shadowColor="#fcfcfc"
-                android:id="@+id/create_tv"/>
+                android:id="@+id/create_tv"/>-->
 
         </LinearLayout>
 

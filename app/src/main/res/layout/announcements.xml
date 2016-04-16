@@ -9,5 +9,5 @@
         android:layout_height="wrap_content"
         android:text="Announcements"
         android:padding="15dp"
-        style="@style/TextAppearance.AppCompat.Widget.TextView.SpinnerItem" />
+        android:background="@drawable/custom_textview" />
 </LinearLayout>

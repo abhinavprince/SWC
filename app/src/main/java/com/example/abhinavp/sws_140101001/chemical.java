@@ -2,10 +2,7 @@ package com.example.abhinavp.sws_140101001;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 /**
  * Created by AbhinavP on 4/16/2016.

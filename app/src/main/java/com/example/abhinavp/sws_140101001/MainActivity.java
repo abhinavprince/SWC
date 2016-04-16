@@ -34,24 +34,25 @@ public class MainActivity extends AppCompatActivity {
         final EditText passwordET = (EditText) findViewById(R.id.password_edit_text);
         final WebView webView = (WebView) findViewById(R.id.webView);
         Button loginBtn = (Button) findViewById(R.id.login_button);
-        TextView CreateTV = (TextView) findViewById(R.id.create_tv);
+        Button CreateTV = (Button) findViewById(R.id.create_btn);
         CreateTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Use your webmail id to login", Toast.LENGTH_LONG);
+                Toast.makeText(MainActivity.this, "Use your webmail id to login", Toast.LENGTH_LONG).show();
+                Intent i = new Intent(MainActivity.this, SignUpPage.class);
+                startActivity(i);
             }
         });
 
         final int[] isLoginCredentialTrue = new int[1];
         loginBtn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-
                 SignIn signin = new SignIn(usernameET,passwordET);
                 try {
                     isCredentialsTrue = signin.execute().get();
                     Log.e("islogincred true : ", Boolean.toString(isCredentialsTrue));
                     if(Boolean.toString(isCredentialsTrue).equals("true")) {
-                        Toast.makeText(MainActivity.this, "boyya", Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity.this, "Booya!", Toast.LENGTH_SHORT).show();
                         Intent i = new Intent(MainActivity.this,HomePage.class);
                         i.putExtra("username",usernameET.getText().toString());
                         startActivity(i);

@@ -3,14 +3,6 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.design.widget.AppBarLayout android:layout_height="wrap_content"
-        android:layout_width="match_parent" android:theme="@style/AppTheme.AppBarOverlay">
-
-        <android.support.v7.widget.Toolbar android:id="@+id/toolbar"
-            android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
-            android:background="#4285F4" />
-
-    </android.support.design.widget.AppBarLayout>
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -35,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/announcements_btn"
-        android:background="#4285F4"
+        android:background="@drawable/custom_button"
         android:text="Announcements"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
@@ -46,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/documents_required_btn"
-        android:background="#4285F4"
+        android:background="@drawable/custom_button"
         android:text="Documents"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
@@ -57,7 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/about_branches_btn"
-        android:background="#4285F4"
+        android:background="@drawable/custom_button"
         android:text="Branches"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
