@@ -7,5 +7,55 @@
         android:layout_height="wrap_content"
         android:text="About"
         android:padding="15dp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chemical Engineering"
+        android:id="@+id/ce_btn"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chemical Science and Technology"
+        android:id="@+id/cst_btn"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Computer Science and Engineering"
+        android:id="@+id/cse_btn"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Civil Engineering"
+        android:id="@+id/cl_btn"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Design"
+        android:id="@+id/dod_btn"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Electronics and Electrical Engineering"
+        android:id="@+id/eee_btn"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Humanities and Social Sciences"
+        android:id="@+id/hss_btn"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mechanical Engineering"
+        android:id="@+id/me_btn"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mathematics"
+        android:id="@+id/maths_btn"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Physics"
+        android:id="@+id/phy_btn"/>
 
 </LinearLayout>

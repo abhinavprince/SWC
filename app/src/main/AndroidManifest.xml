@@ -14,6 +14,16 @@
         <activity android:name=".AboutBranches"/>
         <activity android:name=".Announcements"/>
         <activity android:name=".DocumentsRequired"/>
+        <activity android:name=".chemical"/>
+        <activity android:name=".cl"/>
+        <activity android:name=".cse"/>
+        <activity android:name=".cst"/>
+        <activity android:name=".dod"/>
+        <activity android:name=".eee"/>
+        <activity android:name=".hss"/>
+        <activity android:name=".phy"/>
+        <activity android:name=".maths"/>
+        <activity android:name=".me"/>
 
         <activity
             android:name=".MainActivity"

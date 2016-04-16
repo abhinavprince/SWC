@@ -1,4 +1,20 @@
 <resources>
     <string name="app_name">SWS_140101001</string>
     <string name="action_settings">Settings</string>
+
+    <string-array name="doc_req">
+        <item>SClass X Marks Sheet or equivalent Original Pass Certificate</item>
+        <item>Class XII Marks Sheet or equivalent Original Pass Certificates</item>
+        <item>Original Date of Birth certificate or any equivalent certificate as proof of Date of Birth</item>
+        <item>Category Certificate ( in case of OBC-NCL, SC, ST)</item>
+        <item>Medical examination report</item>
+        <item>Students who have submitted the original copy of Medical examination report at their respective zonal IIT\'s should submit the photostat copy of the same at the time of registration at IIT Guwahati</item>
+        <item>Students who have submitted the original copy of Medical examination report at their respective zonal IIT\'s and are not having the photostat copy are requested to bring another original copy in the same format mentioned below and not necessarily from the same medical practitioner at the time of registration at IIT Guwahati</item>
+        <item>Students who have submitted only the photostat copy of medical examination report should submit the original copy at the time of registration at IIT Guwahati</item>
+        <item>PwD Certificate-if applicable</item>
+        <item>Admit card (JEE Advanced)</item>
+        <item>Provisional seat allotment letter from JEE.</item>
+        <item>8-12 passport size photographs</item>
+    </string-array>
+    <string name="documents_required_head">These are the mandatory documents that are to be brought at the time of registration for B.Tech/B.Des freshers</string>
 </resources>

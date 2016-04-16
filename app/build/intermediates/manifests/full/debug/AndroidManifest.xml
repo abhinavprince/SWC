@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.abhinavp.sws_140101001"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="23" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity android:name="com.example.abhinavp.sws_140101001.HomePage" />
+        <activity android:name="com.example.abhinavp.sws_140101001.AboutBranches" />
+        <activity android:name="com.example.abhinavp.sws_140101001.Announcements" />
+        <activity android:name="com.example.abhinavp.sws_140101001.DocumentsRequired" />
+        <activity android:name="com.example.abhinavp.sws_140101001.chemical" />
+        <activity android:name="com.example.abhinavp.sws_140101001.cl" />
+        <activity android:name="com.example.abhinavp.sws_140101001.cse" />
+        <activity android:name="com.example.abhinavp.sws_140101001.cst" />
+        <activity android:name="com.example.abhinavp.sws_140101001.dod" />
+        <activity android:name="com.example.abhinavp.sws_140101001.eee" />
+        <activity android:name="com.example.abhinavp.sws_140101001.hss" />
+        <activity android:name="com.example.abhinavp.sws_140101001.phy" />
+        <activity android:name="com.example.abhinavp.sws_140101001.maths" />
+        <activity android:name="com.example.abhinavp.sws_140101001.me" />
+        <activity
+            android:name="com.example.abhinavp.sws_140101001.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

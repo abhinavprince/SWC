@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="about_branches" >
+        <item>Chemical Engineering</item>
+        <item>Chemical Science and Technology</item>
+        <item>Computer Science and Engineering</item>
+        <item>Civil Engineering</item>
+        <item>Design</item>
+        <item>Electronics and Electrical Engineering</item>
+        <item>Humanities and Social Sciences</item>
+        <item>Mechanical Engineering</item>
+        <item>Mathematics</item>
+        <item>Physics</item>
+    </string-array>
+</resources>

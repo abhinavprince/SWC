@@ -22,7 +22,7 @@ public class HomePage extends Activity{
         USERNAME = intent.getExtras().getString("username");
 
         TextView homepagetv = (TextView) findViewById(R.id.homepage_tv);
-        homepagetv.setText("Welcome " + USERNAME);
+        homepagetv.setText("Hello " + USERNAME);
 
         Button announcements_btn = (Button) findViewById(R.id.announcements_btn);
         Button documents_req_btn = (Button) findViewById((R.id.documents_required_btn));

@@ -40,7 +40,7 @@ public class LogIn{
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             super.onPageStarted(view, url, favicon);
-        }
+    }
     };
 
     protected LogIn(EditText usernameET, EditText passwordET, WebView webview) {

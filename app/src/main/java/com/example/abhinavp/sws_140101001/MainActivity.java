@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -33,6 +34,13 @@ public class MainActivity extends AppCompatActivity {
         final EditText passwordET = (EditText) findViewById(R.id.password_edit_text);
         final WebView webView = (WebView) findViewById(R.id.webView);
         Button loginBtn = (Button) findViewById(R.id.login_button);
+        TextView CreateTV = (TextView) findViewById(R.id.create_tv);
+        CreateTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Use your webmail id to login", Toast.LENGTH_LONG);
+            }
+        });
 
         final int[] isLoginCredentialTrue = new int[1];
         loginBtn.setOnClickListener(new View.OnClickListener(){
