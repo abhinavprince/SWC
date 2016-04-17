@@ -32,70 +32,24 @@ import javax.net.ssl.X509TrustManager;
  */
 public class SignIn extends AsyncTask<Void, Void, Boolean> {
 
-    private String username, password;
+    private String username, password, NAME;
 
     JSONObject object = null;
 
     private boolean isCredentiaTrue = false;
+
+    protected String get_name(){
+        return NAME;
+    }
 
     public SignIn(EditText usernameET, EditText passwordET) {
         username = usernameET.getText().toString();
         password = passwordET.getText().toString();
     }
 
-    // always verify the host - dont check for certificate
-    final static HostnameVerifier DO_NOT_VERIFY = new HostnameVerifier() {
-        public boolean verify(String hostname, SSLSession session) {
-            return true;
-        }
-    };
-
-    /**
-     * Trust every server - dont check for any certificate
-     */
-    private static void trustAllHosts() {
-        // Create a trust manager that does not validate certificate chains
-        TrustManager[] trustAllCerts = new TrustManager[] { new X509TrustManager() {
-            public java.security.cert.X509Certificate[] getAcceptedIssuers() {
-                return new java.security.cert.X509Certificate[] {};
-            }
-
-            public void checkClientTrusted(X509Certificate[] chain,
-                                           String authType) throws CertificateException {
-            }
-
-            public void checkServerTrusted(X509Certificate[] chain,
-                                           String authType) throws CertificateException {
-            }
-        } };
-
-        // Install the all-trusting trust manager
-        try {
-            SSLContext sc = SSLContext.getInstance("TLS");
-            sc.init(null, trustAllCerts, new java.security.SecureRandom());
-            HttpsURLConnection
-                    .setDefaultSSLSocketFactory(sc.getSocketFactory());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-
-
     protected boolean isLoginCredentialTrue() throws IOException, JSONException {
-        //URL url = new URL("http://pabhinav.byethost7.com/ce03/login_SWC_140101001.php");
+
         URL url = new URL("http://pabhinav.atwebpages.com/SWC/login_SWC_140101001.php");
-        /*HttpURLConnection http = null;
-
-        if (url.getProtocol().toLowerCase().equals("https")) {
-            trustAllHosts();
-            HttpsURLConnection https = (HttpsURLConnection) url.openConnection();
-            https.setHostnameVerifier(DO_NOT_VERIFY);
-            http = https;
-        } else {
-            http = (HttpURLConnection) url.openConnection();
-        }*/
-
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setReadTimeout(10000);
         conn.setConnectTimeout(15000);
@@ -129,15 +83,15 @@ public class SignIn extends AsyncTask<Void, Void, Boolean> {
             while ((line = reader.readLine()) != null) {
                 result += line;
             }
-            Log.e("abhinav result : ",result);
             String result2 = result.substring(result.lastIndexOf("{"));
-            Log.e("abhinav subs result : ",result2);
+            Log.e("JSON result : ",result2);
             if (result.trim().length() > 2) {
                 object = new JSONObject(result2);
                 String success = object.getString("success");
                 String message = object.getString("message");
-                Log.e("abhinav JSON result : ",message);
+                NAME = object.getString("name");
                 Log.e("Object[success] =  : ",success);
+                Log.e("Object[name] =  : ",NAME);
                 if(message.equals("Username and password foud in Database :) :)"))
                     isCredentiaTrue = true;
             }

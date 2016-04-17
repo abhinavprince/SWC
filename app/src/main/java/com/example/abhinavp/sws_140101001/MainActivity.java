@@ -1,6 +1,10 @@
 package com.example.abhinavp.sws_140101001;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -17,9 +21,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
+import java.net.InetAddress;
 import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity {
+
+    public  boolean isOnline() {
+        ConnectivityManager cm =
+                (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        Log.e("lollll: ",netInfo.toString());
+        return netInfo != null && netInfo.isConnectedOrConnecting();
+    }
 
     protected boolean isCredentialsTrue;
 
@@ -38,48 +51,45 @@ public class MainActivity extends AppCompatActivity {
         CreateTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Use your webmail id to login", Toast.LENGTH_LONG).show();
-                Intent i = new Intent(MainActivity.this, SignUpPage.class);
-                startActivity(i);
+                if(isOnline()==false){
+                    Toast.makeText(MainActivity.this, "Check your Internet Connection!", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    Intent i = new Intent(MainActivity.this, SignUpPage.class);
+                    startActivity(i);
+                }
             }
         });
 
         final int[] isLoginCredentialTrue = new int[1];
         loginBtn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                SignIn signin = new SignIn(usernameET,passwordET);
-                try {
-                    isCredentialsTrue = signin.execute().get();
-                    Log.e("islogincred true : ", Boolean.toString(isCredentialsTrue));
-                    if(Boolean.toString(isCredentialsTrue).equals("true")) {
-                        Toast.makeText(MainActivity.this, "Booya!", Toast.LENGTH_SHORT).show();
-                        Intent i = new Intent(MainActivity.this,HomePage.class);
-                        i.putExtra("username",usernameET.getText().toString());
-                        startActivity(i);
-                    }
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } catch (ExecutionException e) {
-                    e.printStackTrace();
+                if(isOnline()==false){
+                    Toast.makeText(MainActivity.this, "Check your Internet Connection!", Toast.LENGTH_LONG).show();
                 }
-                /*LogIn login = new LogIn(usernameET, passwordET, webView);
-                try {
-                    login.isLoginCredentialTrue();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }*/
+                else {
+                    SignIn signin = new SignIn(usernameET, passwordET);
+                    try {
+                        isCredentialsTrue = signin.execute().get();
+                        Log.e("islogincred true : ", Boolean.toString(isCredentialsTrue));
+                        if (Boolean.toString(isCredentialsTrue).equals("true")) {
+                            Toast.makeText(MainActivity.this, "Booya!", Toast.LENGTH_SHORT).show();
+                            Intent i = new Intent(MainActivity.this, HomePage.class);
+                            i.putExtra("username", usernameET.getText().toString());
+                            i.putExtra("name",signin.get_name());
+                            startActivity(i);
+                        }
+                        else{
+                            Toast.makeText(MainActivity.this, "Please enter correct username and password!", Toast.LENGTH_LONG).show();
+                        }
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    } catch (ExecutionException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
         });
-/*
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-*/
     }
 
     @Override

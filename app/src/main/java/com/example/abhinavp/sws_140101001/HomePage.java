@@ -12,7 +12,8 @@ import android.widget.TextView;
  */
 public class HomePage extends Activity{
 
-    private String USERNAME;
+    private String USERNAME, NAME;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,9 +21,10 @@ public class HomePage extends Activity{
 
         Intent intent = getIntent();
         USERNAME = intent.getExtras().getString("username");
+        NAME = intent.getExtras().getString("name");
 
         TextView homepagetv = (TextView) findViewById(R.id.homepage_tv);
-        homepagetv.setText("Hello " + USERNAME);
+        homepagetv.setText("Hello " + NAME);
 
         Button announcements_btn = (Button) findViewById(R.id.announcements_btn);
         Button documents_req_btn = (Button) findViewById((R.id.documents_required_btn));
